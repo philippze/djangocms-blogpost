@@ -31,7 +31,6 @@ def short_date(date):
 def get_blogposts(length=None):
     current_language = get_language()
     posts = BlogPost.objects.pub_for_language(current_language)
-    posts = posts.distinct().order_by('-placeholder__page__publication_date')
     if length is None:
         return posts
     else:
