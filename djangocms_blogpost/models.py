@@ -74,11 +74,3 @@ class BlogPost(CreatePageMixin, CMSPlugin):
     def excerpt(self):
         text = re.sub(r'<[^>]*?>', '', self.body)
         return text[:225]
-    
-    def copy_relations(self, oldinstance):
-        for associated_item in oldinstance.tagged_items.all():
-            # instance.pk = None; instance.pk.save() is the slightly odd but
-            # standard Django way of copying a saved model instance
-            associated_item.pk = None
-            associated_item.object_id = self.id
-            associated_item.save()
