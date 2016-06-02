@@ -30,7 +30,7 @@ def short_date(date):
 @register.assignment_tag
 def get_blogposts(length=None):
     current_language = get_language()
-    posts = BlogPost.objects.pub_for_language(current_language).order_by('path')
+    posts = BlogPost.objects.pub_for_language(current_language).order_by('placeholder__page__path')
     if length is None:
         return posts
     else:
