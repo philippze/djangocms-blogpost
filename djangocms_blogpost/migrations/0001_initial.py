@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('filer', '0005_auto_20160510_1112'),
+        ('filer', '0004_auto_20160328_1434'),
         ('cms', '0014_auto_20160404_1908'),
     ]
 
