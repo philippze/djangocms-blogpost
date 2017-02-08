@@ -65,7 +65,7 @@ class BlogPost(CreatePageMixin, CMSPlugin):
     body = HTMLField(_('Text'))
     image = FilerImageField(verbose_name=_('Bild'))
     pad = models.BooleanField(
-        "Pad instead crop image in teaser",
+        _("Pad instead crop the image in the teaser."),
         default=False
     )
     
